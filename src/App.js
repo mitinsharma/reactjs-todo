@@ -8,7 +8,7 @@ class App extends Component {
     todos: [
       {
         id: 1,
-      title: 'take out the trash',
+      title: 'todo 1',
       completed: false
       },{
         id: 2,
