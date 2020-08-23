@@ -7,9 +7,11 @@ import About from './components/pages/About';
 import {v4 as uuidv4} from 'uuid';
 
 import './App.css';
+import Axios from 'axios';
 
 class App extends Component {
   state = {
+    /*
     todos: [
       {
         id: uuidv4(),
@@ -28,8 +30,14 @@ class App extends Component {
       title: 'todo 4',
       completed: false
       }
-      
     ]
+    */
+   todos: []
+  }
+
+  componentWillMount() {
+    Axios.get('https://jsonplaceholder.typicode.com/todos?_limit=10')
+    .then(res => this.setState({ todos: res.data }));
   }
 
   markComplete = (id) => {
@@ -47,6 +55,15 @@ class App extends Component {
   }
 
   addTodo = (title) => {
+    /**
+     * Axios Post
+     * 
+    Axios.post('url', {
+      title: '',
+      completed: false
+    }).then(res => this.setState({ todos: [...this.state.todos, res.data] }))
+     */
+
     const newTodo = {
       id: uuidv4(),
       title: title,
