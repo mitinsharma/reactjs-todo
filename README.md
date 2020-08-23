@@ -6,6 +6,10 @@ npx create-react-app .
 Start project
 npm start
 
+Build react project
+npm run build
+project files will be in build directory
+
 UUID package
 npm i uuid
 
